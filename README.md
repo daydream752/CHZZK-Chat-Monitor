@@ -2,13 +2,19 @@
 방송인 혹은 유튜버 혹은 키리누커를 위한 프로그램 일지도 모르는 것 Ver.1.0.0
 치지직 라이브 방송의 채팅을 실시간으로 수집하고, 설정한 키워드의 발생과 방송 진행 시간을 함께 기록해 주는 모니터링 도구입니다.
 예를 들어 e스포츠 중계팀에서 “펜타킬” 같은 특정 키워드가 나오면 즉시 하이라이트 후보로 표시하고 싶을 때 이 프로그램을 실행합니다. 방송 주소에서 채널 ID를 입력하고, 브라우저에서 복사한 `NID_AUT`, `NID_SES` 쿠키 값을 채워 넣은 뒤 키워드 설정란에 `펜타킬:2:120, 역전승:1:300`처럼 입력하고 `시작` 버튼을 누릅니다. 그러면 방송 중 채팅이나 후원 메시지에서 해당 키워드가 2분 안에 2번 이상 감지될 때마다 `keyword_times.log`에 기록되고, 동시에 진행 시간이 `01:23:45`처럼 함께 남아 나중에 편집자가 손쉽게 타임라인을 추적할 수 있습니다.
+
 <img width="782" height="962" alt="image" src="https://github.com/user-attachments/assets/c2f3a094-7049-405b-a8d2-bcde84b814ae" />
+
 화면은 이렇게 구성되어 있으며
 채널 id 에는
+
 <img width="537" height="192" alt="image" src="https://github.com/user-attachments/assets/3b71f8fc-efda-4004-a769-ba33d4251780" />
+
 채널 주소의 live 뒤의 노랑색으로 표시 된 채널 아이디를 입력합니다.
 NID_AUT 와 NID_SES는
+
 <img width="1791" height="888" alt="image" src="https://github.com/user-attachments/assets/3335bf75-2082-4fbf-b7ab-07ca98f42840" />
+
 12를 눌러 나오는 창에서 저기로 찾아 들어가서 복사해서 입력하면 됩니다.
 키워드를 입력은 키워드:횟수:시간 이렇게 셋으로 구분 되어 있으며 : <- 세미콜론 으로 구분합니다.
 
@@ -22,6 +28,7 @@ NID_AUT 와 NID_SES는
 프로그램을 실행하면 아래와 같이 파일들이 생기게 됩니다.
 
 <img width="213" height="139" alt="image" src="https://github.com/user-attachments/assets/9bfc8e53-27c9-45ce-b192-e822e1597b16" />
+
 프로그램을 실행하면 다음과 같은 파일들이 만들어지거나 갱신됩니다.
 
 - `keyword_times.log`
@@ -40,7 +47,9 @@ GUI에서 설정한 키워드/임계치/시간 정보가 저장됩니다. 프로
 
 채팅이 keyword_times.log에 저장되면 아래와 같은 양식으로 저장 됩니다.
 순서대로 방송 날짜, 채널 명, 키워드, 채팅친사람 닉네임, 스트리밍 시간, 올라온 채팅 이렇게 구성되어 있습니다.
+
 <img width="554" height="85" alt="image" src="https://github.com/user-attachments/assets/52b8b4ae-cee5-4a4c-969a-db45cb437bbc" />
+
 프로그램 안에도 설명서가 구비 되어 있으니 그걸 보셔도 사용하는데 문제는 없을 겁니다.(아마도)
 
 프로그램 파일을 여러번 실행시키면 여러개의 방송을 동시에 기록 할 수 있습니다. 하지만 그렇게 되면 keyword_times.log의 내용이 상당히 복잡해짐으로 추천 하는 방법은 폴더를 여러개 만들고 프로그램을 각각의 폴더 안에 넣어서 프로그램을 작동시키는 방법입니다. 물론 하나의 폴더에서 프로그램을 여러번 실행시켜도 문제 없이 여러개의 창이 나타나며 하나의 keyword_times.log에 제대로 기록이 됩니다.
